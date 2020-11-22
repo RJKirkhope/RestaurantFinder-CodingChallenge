@@ -1,6 +1,7 @@
 .headerDiv{
   display: flex;
   justify-content: center;
+  text-align: center;
   background-color: #21201d;
   color: white;
 }
