@@ -6,35 +6,28 @@
   color: white;
 }
 
-.App-body{
-  height: 100vh;
+.App{
   width: 100vw;
-  padding-bottom: 40px;
   background-color: #403e39;
   color: white;
 }
 
 .restaurantSearch{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding-top: 20px;  
-}
-
-.search-text{
-  margin: 10px;
+  justify-content: left;
+  align-items: left;
+  margin-left: 1%;
+  padding-top: 1%;  
 }
 
 #search-bar{
-  width:220px;
+  width: 190px;
   padding: 6px 8px;
   border-color: #403e39;
   background-color: #21201d;
 }
 
 .restaurantTable{
-  width: 98%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,30 +35,64 @@
   padding-top: 20px;  
 }
 
-.table-text{
-  margin: 10px;
-}
-
 .tableDiv{
-  width:90%; 
+  width: 96%; 
 }
 
 table{
   table-layout: fixed;
+  border-collapse: collapse;
   width: 100%;
 }
 
 th{
-  border: 1px solid fuchsia;
+  border: 1px solid;
 }
 
 td{
-  border: 1px solid fuchsia;
-  word-wrap: break-word;
+  border: 1px solid;
+  text-align: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  height: 80px;
+}
+
+a{
+  padding-bottom: 10px;
+  color: white;
+}
+
+.name{
+  width: 22%;
+}
+
+.nameTd{
+  font-size: 20pt;
+}
+
+.address{
+  width: 15%;
+}
+
+.genre{
+  width: 12%;
+}
+
+.hours{
+  width: 18%;
+}
+
+.phone{
+  width: 12%;
+}
+
+.websites{
+  width: 10%;
+  align-content: center
 }
 
 .footerDiv{
-  height:50px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;

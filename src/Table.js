@@ -8,13 +8,12 @@ class Table extends Component {
 
     return(
           <tr key={i}>
-              <td>{restaurant['name']}</td>
+              <td className='nameTd'>{restaurant['name']}</td>
               <td style={{whiteSpace: 'pre-wrap'}}>{restaurant['address1']+'\n'+restaurant['city']+' '+restaurant['state']+' '+restaurant['zip']}</td>
-              <td>{restaurant['genre']}</td>
-              <td>{restaurant['hours']}</td>
+              <td style={{whiteSpace: 'pre-wrap'}}>{restaurant['genre'].split(',').join('\n')}</td>
+              <td style={{whiteSpace: 'pre-wrap'}}>{restaurant['hours'].split(';').join('\n')}</td>
               <td>{restaurant['telephone']}</td>
-              <td><a href={restaurant['website']} target="_blank">Visit Website</a></td>
-
+              <td><button><a href={restaurant['website']} target="_blank">Visit Website</a></button></td>
           </tr>
       )
   });
@@ -23,12 +22,12 @@ class Table extends Component {
       <div className="tableDiv">
         <table>
           <tr>
-            <th>Name</th>
-            <th>Address</th>
-            <th>Genre</th>
-            <th>Hours</th>
-            <th>Phone</th>
-            <th>Website</th>
+            <th className='name'>Name</th>
+            <th className='address'>Address</th>
+            <th className='genre'>Genre</th>
+            <th className='hours'>Hours</th>
+            <th className='phone'>Phone</th>
+            <th className='websites'>Website</th>
           </tr>
         {listItems}
         </table>
