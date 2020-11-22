@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
+import Header from './Header.js';
+import Footer from './Footer.js';
+import Search from './Search.js';
+import Table from './Table.js';
 
 class App extends Component {
   state={
@@ -20,6 +24,7 @@ class App extends Component {
           this.setState({
             isLoaded: true,
             restaurantData: res,
+            search: "",
           });
         },
         (error) => {
@@ -30,8 +35,18 @@ class App extends Component {
         }
       )
         }
+    receiveSearch = (event) => {
+      this.setState({search: event})
+    }
+
   render() {
   const {error, isLoaded, restaurantData} = this.state;
+
+  let searchableRestaurants = restaurantData.filter(
+    (restaurant) => {
+      return restaurant.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+    }
+  );
 
   if (error) {
     return <div>Error: {error.message}</div>;
@@ -39,20 +54,22 @@ class App extends Component {
     return <div>Loading...</div>;
   } else {
 
-    console.log(restaurantData)
-
     return (
       <div className="App">
-        <header className="App-header">
-          <h1>Hand Shake Acquired</h1>
-          <ul>
-          {restaurantData.map(restaurant => (
-            <li key={restaurant.id}>
-              {restaurant.name}
-            </li>
-          ))}
-        </ul>
-        </header>
+        <Header />
+        <div className="restaurantSearch">
+            <span className="search-text">
+              <h4>Search For A Restaurant</h4>
+            </span>
+            <Search receiveSearch={this.receiveSearch}/>
+        </div>
+        <div className="restaurantTable">
+            <span className="table-text">
+              <h4>Here Are The Restaurants</h4>
+            </span>
+            <Table receiveTable={searchableRestaurants}/>
+        </div>
+        <Footer />
       </div>
     );
   }
