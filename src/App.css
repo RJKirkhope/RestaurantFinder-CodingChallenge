@@ -26,6 +26,27 @@
   background-color: #21201d;
 }
 
+.pageButtonContainer{
+  margin: 1%;
+  text-align: right;
+}
+
+.pageIndicator{
+  margin: 1%;
+}
+
+.pageButton{
+  margin: .5%;
+  width: 3.5%;
+  border: none;
+  color: white;
+  background-color: darkcyan;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
 .restaurantTable{
   width: 100%;
   display: flex;
@@ -58,8 +79,16 @@ td{
 }
 
 a{
-  padding-bottom: 10px;
   color: white;
+  text-decoration: none;
+}
+
+button{
+  transition-duration: 0.5s;
+}
+
+button:hover{
+  background-color:cyan;
 }
 
 .name{
@@ -86,9 +115,20 @@ a{
   width: 12%;
 }
 
-.websites{
+.website{
   width: 10%;
   align-content: center
+}
+
+.websiteTd{
+  border: none;
+  color: white;
+  background-color: darkcyan;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 5px;
+  font-size: 12pt;
 }
 
 .footerDiv{
