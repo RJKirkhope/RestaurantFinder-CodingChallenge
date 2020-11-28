@@ -43,11 +43,14 @@ class App extends Component {
     return <div>Loading...</div>;
   } else {
 
+  //Alphabetize the data before passing it to the table.
+  this.state.data.sort((a, b) => a.name.localeCompare(b.name))
+
     return (
       <div className="App">
         <Header />
         <div className="restaurantTable">
-            <Table receiveTable={data}/>
+          <Table receiveTable={data}/>
         </div>
         <Footer />
       </div>

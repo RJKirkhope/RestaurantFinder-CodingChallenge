@@ -3,8 +3,15 @@ import './App.css';
 
 function Header(){
   return(
-    <div className="headerDiv">
-      <h1>38 Restaurants...<br /> A Table.</h1>
+    <div id="header">
+
+      <div className='headerText'>
+        <h1>Your Table Is Ready.</h1>
+        <span>
+        <h3>A helpful guide for finding a restaurant.</h3>
+        </span>
+      </div>
+      
     </div>
   )
 

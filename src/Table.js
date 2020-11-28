@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Search from './Search.js';
 import './App.css';
 
@@ -38,6 +38,7 @@ class Table extends Component {
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentData = searchableData.slice(indexOfFirstItem, indexOfLastItem);
     const pageNumbers = [];
+    let noResults = ''
 
     for (let i = 1; i <= Math.ceil(searchableData.length / itemsPerPage); i++) {
       pageNumbers.push(i);
@@ -56,20 +57,24 @@ class Table extends Component {
     return(
           <tr key={i}>
               <td className='nameTd'>{restaurant['name']}</td>
-              <td style={{whiteSpace: 'pre-wrap'}}>{restaurant['address1']+'\n'+restaurant['city']+' '+restaurant['state']+' '+restaurant['zip']}</td>
-              <td style={{whiteSpace: 'pre-wrap'}}>{restaurant['genre'].split(',').join('\n')}</td>
-              <td style={{whiteSpace: 'pre-wrap'}}>{restaurant['hours'].split(';').join('\n')}</td>
-              <td>{restaurant['telephone']}</td>
+              <td className='addressTd' style={{whiteSpace:'pre-wrap'}}>{restaurant['address1']+'\n'+restaurant['city']+' '+restaurant['state']+' '+restaurant['zip']}</td>
+              <td className='genreTd' style={{whiteSpace:'pre-wrap'}}>{restaurant['genre'].split(',').join('\n')}</td>
+              <td className='hoursTd' style={{whiteSpace:'pre-wrap'}}>{restaurant['hours'].split(';').join('; \n')}</td>
+              <td className='phoneTd'>{restaurant['telephone']}</td>
               <td><button className='websiteTd'><a href={restaurant['website']} target="_blank">Visit Website</a></button></td>
           </tr>
       )
     });
+    
+    if (currentData.length === 0){
+        noResults = `We're Sorry, no items match your search parameters, please try again.`
+    }
 
     return (
       <div className="tableDiv">
         <div className="restaurantSearch">
           <span className="search-text">
-            <h4>Search For A Restaurant</h4>
+            <h4>Find A Retaurant</h4>
           </span>
           <Search receiveSearch={this.receiveSearch}/>
           </div>
@@ -90,6 +95,9 @@ class Table extends Component {
               {listItems}
             </tbody>
           </table>
+          <div>
+            <h2>{noResults}</h2>
+          </div>
             <div className="pageButtonContainer">
               Page: {renderPageNumbers}
               <div className='pageIndicator'>Current Page: {currentPage}</div>

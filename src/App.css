@@ -1,15 +1,25 @@
-.headerDiv{
+.App {
+  min-height: 100vh;
+  min-width: 100vw;
+  color: #DDDBCB;
+  background-color: #464A4B;
+}
+
+#header{
   display: flex;
   justify-content: center;
   text-align: center;
-  background-color: #21201d;
-  color: white;
+  background-image: url('./images/header-image.jpg');
+  background-repeat:no-repeat;
+  color: #DDDBCB;
+  height: 20vh;
 }
 
-.App{
-  width: 100vw;
-  background-color: #403e39;
-  color: white;
+.headerText{
+  padding-top: 3vh;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  background-color: rgba(0,0,0, 0.4);
 }
 
 .restaurantSearch{
@@ -23,7 +33,12 @@
   width: 190px;
   padding: 6px 8px;
   border-color: #403e39;
-  background-color: #21201d;
+  background: #403e39
+}
+
+input{
+  border: none;
+  color: #DDDBCB;
 }
 
 .pageButtonContainer{
@@ -40,7 +55,7 @@
   width: 3.5%;
   border: none;
   color: white;
-  background-color: darkcyan;
+  background-color: #717B65;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -75,7 +90,7 @@ td{
   text-align: center;
   padding-top: 1%;
   padding-bottom: 1%;
-  height: 80px;
+  height: 9vh;
 }
 
 a{
@@ -88,7 +103,7 @@ button{
 }
 
 button:hover{
-  background-color:cyan;
+  background-color:#869178;
 }
 
 .name{
@@ -96,7 +111,7 @@ button:hover{
 }
 
 .nameTd{
-  font-size: 20pt;
+  font-size: 1.8em;
 }
 
 .address{
@@ -123,19 +138,207 @@ button:hover{
 .websiteTd{
   border: none;
   color: white;
-  background-color: darkcyan;
+  background-color: #717B65;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   padding: 5px;
-  font-size: 12pt;
 }
 
-.footerDiv{
-  height: 50px;
+#footer{
+  position:absolute;
+  left:0;
+  bottom:0;
+  right:0;
+}
+
+.links{
   display: flex;
+  width:100%;
+  height: 8vh;
+  margin-top: 1vh;
+  bottom:0;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
-  background-color: #21201d;
-  color: white;
+}
+
+#github{
+  margin-right: 1vw;
+}
+
+#linkedIn{
+  margin-left: 1vw;
+}
+
+@media screen and (max-width: 975px) {
+  
+  .name{
+    width: 18%;
+  }
+
+  .hours{
+    width: 12%;
+  }
+
+  .nameTd{
+    font-size: 1.2em;
+  }
+
+  .addressTd{
+    font-size: .8em;
+  }
+
+  .genreTd{
+    font-size: .8em;
+  }
+
+  .hoursTd{
+    font-size: .8em;
+  }
+
+  .phoneTd{
+    font-size: .8em;
+  } 
+
+  .websiteTd{
+    font-size: .8em;
+    padding: 1.5px;
+  }
+
+}
+
+@media screen and (max-width: 700px) {
+
+  .nameTd{
+    font-size: 1em;
+  }
+
+  .addressTd{
+    font-size: .7em;
+  }
+
+  .genreTd{
+    font-size: .7em;
+  }
+
+  .hoursTd{
+    font-size: .7em;
+  }
+
+  .phoneTd{
+    font-size: .7em;
+  }
+
+  .websiteTd{
+    font-size: .7em;
+    padding: 1px;
+  }
+
+}
+
+@media screen and (max-width: 580px) {
+
+  .name{
+    font-size: .8em;
+  }
+  
+  .address{
+    font-size: .8em;
+  }
+  
+  .genre{
+    font-size: .8em;
+  }
+  
+  .hours{
+    font-size: .8em;
+  }
+  
+  .phone{
+    font-size: .8em;
+  }
+  
+  .website{
+    font-size: .8em;
+  }
+
+  .nameTd{
+    font-size: .8em;
+  }
+
+  .addressTd{
+    font-size: .6em;
+  }
+
+  .genreTd{
+    font-size: .6em;
+  }
+
+  .hoursTd{
+    font-size: .6em;
+  }
+
+  .phoneTd{
+    font-size: .6em;
+  }
+
+  .websiteTd{
+    font-size: .5em;
+    padding: 1px;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+
+  .name{
+    font-size: .5em;
+    width: 12%;
+  }
+  
+  .address{
+    font-size: .5em;
+  }
+  
+  .genre{
+    font-size: .5em;
+  }
+  
+  .hours{
+    font-size: .5em;
+  }
+  
+  .phone{
+    font-size: .5em;
+  }
+  
+  .website{
+    font-size: .5em;
+  }
+
+  .nameTd{
+    font-size: .5em;
+  }
+
+  .addressTd{
+    font-size: .5em;
+  }
+
+  .genreTd{
+    font-size: .5em;
+  }
+
+  .hoursTd{
+    font-size: .5em;
+  }
+
+  .phoneTd{
+    font-size: .5em;
+  }
+
+  .websiteTd{
+    font-size: .3em;
+    padding: 0;
+  }
+
 }
