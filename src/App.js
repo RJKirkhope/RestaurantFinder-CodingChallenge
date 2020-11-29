@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import Header from './components/Header.js';
+import Table from './components/Table.js';
+import Footer from './components/Footer.js';
 import './App.css';
-import Header from './Header.js';
-import Footer from './Footer.js';
-import Table from './Table.js';
 
 class App extends Component {
   state={
@@ -14,9 +14,9 @@ class App extends Component {
   componentDidMount(){
     fetch("https://code-challenge.spectrumtoolbox.com/api/restaurants", {
       headers: {
-      Authorization: "Api-Key q3MNxtfep8Gt",
+        Authorization: "Api-Key q3MNxtfep8Gt",
       },
-      })
+    })
     .then(res => res.json())
       .then(
         (res) => {
@@ -32,31 +32,31 @@ class App extends Component {
           });
         }
       )
-        }
+  }
 
   render() {
-  const {error, isLoaded, data} = this.state;
+    const {error, isLoaded, data} = this.state;
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  } else if (!isLoaded) {
-    return <div>Loading...</div>;
-  } else {
+    if (error) {
+      return <div>Error: {error.message}</div>;
+    } else if (!isLoaded) {
+      return <div>Loading...</div>;
+    } else {
 
-  //Alphabetize the data before passing it to the table.
-  this.state.data.sort((a, b) => a.name.localeCompare(b.name))
+      //alphabetize the data before passing it to the table.
+      this.state.data.sort((a, b) => a.name.localeCompare(b.name))
 
-    return (
-      <div className="App">
-        <Header />
-        <div className="restaurantTable">
-          <Table receiveTable={data}/>
+      return (
+        <div className="App">
+          <Header />
+          <div className="restaurantTable">
+            <Table receiveTable={data}/>
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    );
+      )
+    }
   }
-}
 }
 
 export default App;

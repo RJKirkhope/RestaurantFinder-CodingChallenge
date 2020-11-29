@@ -10,9 +10,9 @@
   justify-content: center;
   text-align: center;
   background-image: url('./images/header-image.jpg');
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   color: #DDDBCB;
-  height: 20vh;
+  height: 22vh;
 }
 
 .headerText{
@@ -22,21 +22,38 @@
   background-color: rgba(0,0,0, 0.4);
 }
 
-.restaurantSearch{
-  justify-content: left;
-  align-items: left;
-  margin-left: 1%;
-  padding-top: 1%;  
+.tableContainer{
+  width: 98%; 
 }
 
-#search-bar{
-  width: 190px;
+.restaurantSearchFilter{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; 
+  font-size: 1em;
+  margin-right: 7vw;
+}
+
+.search{
+  width: 20vw;
+  border-color: #403e39;
+  background: #403e39
+}
+
+.filter{
+  width: 20vw;
   padding: 6px 8px;
   border-color: #403e39;
   background: #403e39
 }
 
 input{
+  border: none;
+  padding: 2.5%;
+  color: #DDDBCB;
+}
+
+select{
   border: none;
   color: #DDDBCB;
 }
@@ -71,10 +88,6 @@ input{
   padding-top: 20px;  
 }
 
-.tableDiv{
-  width: 96%; 
-}
-
 table{
   table-layout: fixed;
   border-collapse: collapse;
@@ -103,7 +116,7 @@ button{
 }
 
 button:hover{
-  background-color:#869178;
+  background-color: #869178;
 }
 
 .name{
@@ -132,7 +145,7 @@ button:hover{
 
 .website{
   width: 10%;
-  align-content: center
+  align-content: center;
 }
 
 .websiteTd{
@@ -145,19 +158,23 @@ button:hover{
   padding: 5px;
 }
 
+.noResults{
+  align-content: center;
+  text-align: center;
+}
+
 #footer{
-  position:absolute;
-  left:0;
-  bottom:0;
-  right:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .links{
   display: flex;
-  width:100%;
+  width: 100%;
   height: 8vh;
   margin-top: 1vh;
-  bottom:0;
+  bottom: 0;
   flex-direction: row;
   justify-content: center;
 }
@@ -170,8 +187,7 @@ button:hover{
   margin-left: 1vw;
 }
 
-@media screen and (max-width: 975px) {
-  
+@media screen and (max-width: 975px){
   .name{
     width: 18%;
   }
@@ -204,10 +220,12 @@ button:hover{
     font-size: .8em;
     padding: 1.5px;
   }
-
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 660px){
+  .App {
+    width: 660px;
+  }
 
   .nameTd{
     font-size: 1em;
@@ -233,112 +251,4 @@ button:hover{
     font-size: .7em;
     padding: 1px;
   }
-
-}
-
-@media screen and (max-width: 580px) {
-
-  .name{
-    font-size: .8em;
-  }
-  
-  .address{
-    font-size: .8em;
-  }
-  
-  .genre{
-    font-size: .8em;
-  }
-  
-  .hours{
-    font-size: .8em;
-  }
-  
-  .phone{
-    font-size: .8em;
-  }
-  
-  .website{
-    font-size: .8em;
-  }
-
-  .nameTd{
-    font-size: .8em;
-  }
-
-  .addressTd{
-    font-size: .6em;
-  }
-
-  .genreTd{
-    font-size: .6em;
-  }
-
-  .hoursTd{
-    font-size: .6em;
-  }
-
-  .phoneTd{
-    font-size: .6em;
-  }
-
-  .websiteTd{
-    font-size: .5em;
-    padding: 1px;
-  }
-
-}
-
-@media screen and (max-width: 480px) {
-
-  .name{
-    font-size: .5em;
-    width: 12%;
-  }
-  
-  .address{
-    font-size: .5em;
-  }
-  
-  .genre{
-    font-size: .5em;
-  }
-  
-  .hours{
-    font-size: .5em;
-  }
-  
-  .phone{
-    font-size: .5em;
-  }
-  
-  .website{
-    font-size: .5em;
-  }
-
-  .nameTd{
-    font-size: .5em;
-  }
-
-  .addressTd{
-    font-size: .5em;
-  }
-
-  .genreTd{
-    font-size: .5em;
-  }
-
-  .hoursTd{
-    font-size: .5em;
-  }
-
-  .phoneTd{
-    font-size: .5em;
-  }
-
-  .websiteTd{
-    font-size: .3em;
-    padding: 0;
-  }
-
 }
